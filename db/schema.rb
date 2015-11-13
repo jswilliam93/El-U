@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151110113909) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "group_id"
     t.string   "text"
     t.string   "tag"
     t.boolean  "announcment", default: false
