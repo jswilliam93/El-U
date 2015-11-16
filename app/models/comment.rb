@@ -4,4 +4,7 @@ class Comment < ActiveRecord::Base
     validates :text, allow_blank: false, presence: true
     validates :user_id, presence: true
     validates :post_id, presence: true
+
+    after_save -> {puts "Comment created."}
+    after_rollback -> {puts "Please make sure you entered everything correctly and try again"}
 end
